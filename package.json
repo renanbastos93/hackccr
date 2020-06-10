@@ -1,0 +1,20 @@
+{
+  "name": "hackccr",
+  "version": "0.0.1",
+  "description": "hackathon CCR",
+  "main": "bin/main.js",
+  "scripts": {
+    "start": "node ./bin/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renanbastos93/hackccr.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/renanbastos93/hackccr/issues"
+  },
+  "homepage": "https://github.com/renanbastos93/hackccr#readme"
+}

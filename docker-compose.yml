@@ -1,0 +1,32 @@
+version: "3"
+services:
+
+  hackccr:
+    build:
+      context: .
+      dockerfile: ci/dockerfile
+    volumes:
+      - .:/code/
+    container_name: hackccr
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongo
+    networks:
+      - hack-network
+
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+    container_name: mongo
+    volumes:
+        - ./data:/data/db
+    ports:
+      - "3306:3306"
+    networks:
+      - hack-network
+
+networks:
+    hack-network:
+    driver: bridge
