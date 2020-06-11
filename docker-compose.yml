@@ -28,5 +28,5 @@ services:
       - hack-network
 
 networks:
-    hack-network:
+  hack-network:
     driver: bridge

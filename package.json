@@ -5,6 +5,7 @@
   "main": "bin/main.js",
   "scripts": {
     "start": "node ./bin/main.js",
+    "dev": "nodemon ./bin/main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/renanbastos93/hackccr/issues"
   },
-  "homepage": "https://github.com/renanbastos93/hackccr#readme"
+  "homepage": "https://github.com/renanbastos93/hackccr#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.9.18"
+  }
 }

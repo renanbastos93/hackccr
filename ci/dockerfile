@@ -9,4 +9,4 @@ COPY . /code
 
 EXPOSE 3000:3000
 
-ENTRYPOINT [ "sh" ]
+CMD [ "npm", "run", "dev" ]
