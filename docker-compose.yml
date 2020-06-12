@@ -1,6 +1,5 @@
 version: "3"
 services:
-
   hackccr:
     build:
       context: .
@@ -10,20 +9,21 @@ services:
     container_name: hackccr
     ports:
       - "3000:3000"
-    depends_on:
-      - mongo
+    links:
+      - mongodb
+    depends_on: 
+      - mongodb
     networks:
       - hack-network
 
-  mongo:
-    image: mongo
+  mongodb:
+    image: mongo:latest
+    restart: always
+    container_name: mongodb
     ports:
       - "27017:27017"
-    container_name: mongo
     volumes:
-        - ./data:/data/db
-    ports:
-      - "3306:3306"
+        - ./mongodata:/data/db:rw
     networks:
       - hack-network
 
