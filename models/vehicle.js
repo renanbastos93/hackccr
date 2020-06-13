@@ -3,8 +3,10 @@ const Schema = mongoose.Schema;
 const Model = mongoose.model;
 
 var VehicleSchema = new Schema({
+    name:String,
     licensePlate: String,
     lastUsed:String,
+    clientId:String,
     type:{
         color:String,
         model:String,

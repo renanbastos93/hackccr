@@ -19,6 +19,7 @@ module.exports = [
                 )
         }
     },
+    
     {
         Method: "get",
         Route: "/client/:id/vehicles",
@@ -36,6 +37,7 @@ module.exports = [
                 )
         }
     },
+
     {
         Method: "post",
         Route: "/vehicles",
@@ -58,6 +60,7 @@ module.exports = [
             }
         }
     },
+
     {
         Method: "put",
         Route: "/vehicles/:id",

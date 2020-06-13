@@ -1,5 +1,6 @@
 class Validator {
     constructor() { }
+    
     valid(vehicle = null) {
         if (!vehicle || vehicle.licensePlate || vehicle.name) {
             throw "Invalid schema"
