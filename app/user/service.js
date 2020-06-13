@@ -26,6 +26,13 @@ class UserService {
         }
         return null
     }
+    async login(phone, password) {
+        let user = await UserModel.findOne({phone: phone}).exec()
+        if (user && bcrypt.compareSync(password, user.password)) {
+            return user
+        }
+        return null
+    }
 }
 
 module.exports = UserService

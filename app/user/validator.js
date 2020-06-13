@@ -29,6 +29,11 @@ class Validator {
             }
         }
     }
+    validLogin(user) {
+        if (!user.phone || !user.password) {
+            throw "User or password invalid"
+        }
+    }
 }
 
 module.exports = Validator;

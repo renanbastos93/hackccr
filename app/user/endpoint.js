@@ -80,4 +80,29 @@ module.exports = [
             }
         }
     },
+    {
+        Method: "post",
+        Route: "/login",
+        Func: function(req, res) {
+            try {
+                new UserValidator().validLogin(req.body)
+                new UserService().login(req.body.phone, req.body.password)
+                    .then(
+                        (data) => {
+                            if (!data) {
+                                res.status(400).send("User or password invalid")
+                            }
+                            res.status(200).json(data)
+                        }
+                    )
+                    .catch(
+                        (err) => {
+                            res.status(500).send(err)
+                        }
+                    )
+            } catch(err) {
+                return res.status(400).send(err)
+            }
+        }
+    },
 ]
