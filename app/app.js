@@ -5,6 +5,7 @@ const app = express()
 
 const listUserEndpoints = require("./user/endpoint")
 const listLocalEndpoints = require("./locals/endpoint")
+const listPointEndpoints = require("./points/endpoint")
 
 function Setup(listEndpoints) {
     app.group("/api", (router) => {
@@ -20,6 +21,7 @@ function ListenAPI(port) {
     app.use(bodyParser.urlencoded({ extended: false }))
     Setup(listUserEndpoints)
     Setup(listLocalEndpoints)
+    Setup(listPointEndpoints)
     app.listen(port, () => console.log(`App listening at 0.0.0.0:${port}`))
 }
 
