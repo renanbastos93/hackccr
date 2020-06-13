@@ -2,10 +2,7 @@ const express = require('express')
 require('express-group-routes');
 const bodyParser = require("body-parser")
 const app = express()
-const port = 3000
 const listUserEndpoints = require("./user/endpoint")
-
-
 
 function Setup(listEndpoints) {
     app.group("/api", (router) => {
@@ -16,7 +13,7 @@ function Setup(listEndpoints) {
     })
 }
 
-function ListenAPI() {
+function ListenAPI(port) {
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: false }))
     Setup(listUserEndpoints)

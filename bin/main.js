@@ -1,7 +1,8 @@
 const mongoose = require("mongoose")
-mongoose.connect('mongodb://mongodb/hackccr', {useUnifiedTopology: true, useNewUrlParser: true})
-
-
+const config = require("config")
 const api = require("./../app/app")
-api()
+
+
+mongoose.connect(config.get("database.conn"), config.get("database.opt"))
+api(config.get("server.port"))
 
