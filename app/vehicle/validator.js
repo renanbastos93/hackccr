@@ -2,7 +2,7 @@ class Validator {
     constructor() { }
     
     valid(vehicle = null) {
-        if (!vehicle || vehicle.licensePlate || vehicle.name) {
+        if (!vehicle || !vehicle.licensePlate || !vehicle.name) {
             throw "Invalid schema"
         } else if (vehicle.name === "" || vehicle.name.length < 3) {
             throw "Invalid name"
