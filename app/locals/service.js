@@ -1,5 +1,4 @@
 const LocalModel = require("./../../models/local")
-const bcrypt = require("bcryptjs")
 
 class LocalService {
     constructor(){
