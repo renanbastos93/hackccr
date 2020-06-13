@@ -10,7 +10,11 @@ var UserSchema = new Schema({
     },
     name: String,
     lastName: String,
-    phone: String,
+    phone: {
+        type: String,
+        index: true,
+        unique: true
+    },
     password: String,
     freelancer: Boolean,
 },{
