@@ -29,16 +29,18 @@ function Setup(listEndpoints) {
 }
 
 function ListenAPI(port) {
-    app.use(middleware)
-    app.use(bodyParser.json());
-    app.use(bodyParser.urlencoded({ extended: false }))
-    app.use(endpointsUtil.verifyToken)
+    app.use("/", express.static('public'))
+    app.use("/api", middleware, 
+        bodyParser.json(), 
+        bodyParser.urlencoded({ extended: false }), 
+        endpointsUtil.verifyToken)
 
     Setup(listUserEndpoints)
     Setup(listVehiclesEndpoints)
     Setup(listLocalEndpoints)
     Setup(listPointEndpoints)
     Setup(listRatingEndpoints)
+
 
     app.listen(port, () => console.log(`App listening at 0.0.0.0:${port}`))
 }
