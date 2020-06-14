@@ -21,6 +21,8 @@ function Setup(listEndpoints) {
 function ListenAPI(port) {
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: false }))
+    app.use(endpointsUtil.verifyToken)
+
     Setup(listUserEndpoints)
     Setup(listLocalEndpoints)
     Setup(listPointEndpoints)
