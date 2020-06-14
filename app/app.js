@@ -4,6 +4,7 @@ const bodyParser = require("body-parser")
 const app = express()
 const listUserEndpoints = require("./user/endpoint")
 const listVehicleEndpoints = require("./vehicle/endpoint")
+const listRatingEndpoints = require("./rating/endpoint")
 
 
 function Setup(listEndpoints) {
@@ -20,6 +21,7 @@ function ListenAPI(port) {
     app.use(bodyParser.urlencoded({ extended: false }))
     Setup(listUserEndpoints)
     Setup(listVehicleEndpoints)
+    Setup(listRatingEndpoints)
     app.listen(port, () => console.log(`App listening at 0.0.0.0:${port}`))
 }
 

@@ -22,7 +22,7 @@ module.exports = [
     
     {
         Method: "get",
-        Route: "/client/:id/vehicles",
+        Route: "/vehicles/client/:id",
         Func: function(req, res) {
             new VehicleService().getByClientId(req.params.id)              
               .then(
