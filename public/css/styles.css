@@ -2101,3 +2101,19 @@ a:hover.back-to-top {
 	/* end of extra pages */
 }
 /* end of min-width width 1200px */
+
+
+/* CUSTOM CSS */
+.logo-bina-txt > a {
+	text-decoration: none;
+	padding-top: 5px;
+}
+
+.logo-bina-txt > a:hover {
+	text-decoration: underline;
+}
+
+.navbar-custom .navbar-brand.logo-image img {
+	width: 70px;
+	height: 45px;
+}
