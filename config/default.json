@@ -3,7 +3,8 @@
         "conn": "mongodb://mongodb/hackccr",
         "opt": {
             "useUnifiedTopology": true,
-            "useNewUrlParser": true
+            "useNewUrlParser": true,
+            "useCreateIndex": true
         }
     },
     "server": {
