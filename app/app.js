@@ -2,8 +2,10 @@ const express = require('express')
 require('express-group-routes');
 const bodyParser = require("body-parser")
 const app = express()
+
 const listUserEndpoints = require("./user/endpoint")
-const listVehicleEndpoints = require("./vehicle/endpoint")
+const listLocalEndpoints = require("./locals/endpoint")
+const listPointEndpoints = require("./points/endpoint")
 const listRatingEndpoints = require("./rating/endpoint")
 
 
@@ -20,8 +22,10 @@ function ListenAPI(port) {
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: false }))
     Setup(listUserEndpoints)
-    Setup(listVehicleEndpoints)
+    Setup(listLocalEndpoints)
+    Setup(listPointEndpoints)
     Setup(listRatingEndpoints)
+
     app.listen(port, () => console.log(`App listening at 0.0.0.0:${port}`))
 }
 
