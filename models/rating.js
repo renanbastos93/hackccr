@@ -15,6 +15,8 @@ var RatingSchema = new Schema({
     clientId: String,
     rating: Number,
     notes: String
+},{
+    versionKey:false
 });
 
 var Rating = Model('Rating', RatingSchema, "Rating");

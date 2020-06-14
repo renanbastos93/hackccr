@@ -16,6 +16,8 @@ var VehicleSchema = new Schema({
         model: String,
         year: Date
     }
+},{
+    versionKey:false
 });
 
 var Vehicle = Model('Vehicle', VehicleSchema, "Vehicle");
