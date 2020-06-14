@@ -805,41 +805,46 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2>CONTACT</h2>
+                    <h2>CADASTRO</h2>
                     <ul class="list-unstyled li-space-lg">
-                        <li class="address">Don't hesitate to give us a call or just use the contact form below</li>
-                        <li><i class="fas fa-map-marker-alt"></i>22 Innovative, San Francisco, CA 94043, US</li>
-                        <li><i class="fas fa-phone"></i><a class="blue" href="tel:003024630820">+81 720 2212</a></li>
-                        <li><i class="fas fa-envelope"></i><a class="blue" href="mailto:office@leno.com">office@leno.com</a></li>
+                        <li class="address">FAÇA PARTE DA REDE DE CAMINHONEIROS</li>
+                        <li>Cadastre seu estabelecimento para ganhar visibilidade no aplicativo</li>
                     </ul>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
+                    <!-- 
+                        Nome da empresa
+                        Endereço completo
+                        CEP
+                        Celular
+                     -->
                     
                     <!-- Contact Form -->
                     <form id="contactForm" data-toggle="validator" data-focus="false">
                         <div class="form-group">
                             <input type="text" class="form-control-input" id="cname" required>
-                            <label class="label-control" for="cname">Name</label>
+                            <label class="label-control" for="cname">Nome da Empresa</label>
                             <div class="help-block with-errors"></div>
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control-input" id="cemail" required>
-                            <label class="label-control" for="cemail">Email</label>
+                            <input type="text" class="form-control-input" id="address" required>
+                            <label class="label-control" for="cemail">Endereço Completo</label>
                             <div class="help-block with-errors"></div>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control-textarea" id="cmessage" required></textarea>
-                            <label class="label-control" for="cmessage">Your message</label>
-                            <div class="help-block with-errors"></div>
-                        </div>
-                        <div class="form-group checkbox">
-                            <input type="checkbox" id="cterms" value="Agreed-to-Terms" required>I have read and agree to Leno's stated conditions in <a href="privacy-policy.html">Privacy Policy</a> and <a href="terms-conditions.html">Terms Conditions</a> 
+                            <input type="number" class="form-control-input" id="cep" required>
+                            <label class="label-control" for="cemail">CEP</label>
                             <div class="help-block with-errors"></div>
                         </div>
                         <div class="form-group">
-                            <button type="submit" class="form-control-submit-button">SUBMIT MESSAGE</button>
+                            <input type="number" class="form-control-input" id="phone" required>
+                            <label class="label-control" for="cemail">TELEFONE</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="form-control-submit-button">Cadastrar</button>
                         </div>
                         <div class="form-message">
                             <div id="cmsgSubmit" class="h3 text-center hidden"></div>
