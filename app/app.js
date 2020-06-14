@@ -10,6 +10,14 @@ const listLocalEndpoints = require("./locals/endpoint")
 const listPointEndpoints = require("./points/endpoint")
 const listRatingEndpoints = require("./rating/endpoint")
 
+const middleware = (_, response, next) => {
+    // response.append("Cache-Control", "public, max-age=120");
+    response.append("Access-Control-Allow-Origin", "*");
+    response.append("Access-Control-Allow-Credentials", true)
+    response.append("Access-Control-Allow-Methods", ["GET", "POST", "PUT", "OPTIONS"]);
+    response.append("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, x-access-token, User");
+    return next();
+};
 
 function Setup(listEndpoints) {
     app.group("/api", (router) => {
@@ -21,6 +29,7 @@ function Setup(listEndpoints) {
 }
 
 function ListenAPI(port) {
+    app.use(middleware)
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: false }))
     app.use(endpointsUtil.verifyToken)
