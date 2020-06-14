@@ -1,5 +1,6 @@
 const UserService = require("./service")
 const UserValidator = require("./validator")
+const endpointsUtil = require("./../endpoints/utils")
 
 module.exports = [
     {
@@ -92,7 +93,10 @@ module.exports = [
                             if (!data) {
                                 res.status(400).send("User or password invalid")
                             }
-                            res.status(200).json(data)
+                            res.status(200).json({
+                                user: data,
+                                token: endpointsUtil.createToken(data.clientId)
+                            })
                         }
                     )
                     .catch(
@@ -104,5 +108,10 @@ module.exports = [
                 return res.status(400).send(err)
             }
         }
+    },
+    {
+        Method: "get",
+        Route: "/token",
+        Func: endpointsUtil.renewToken,
     },
 ]
