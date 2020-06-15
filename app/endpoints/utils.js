@@ -21,7 +21,7 @@ function renewToken(req, res) {
             return res.status(200).send({ isValid: false }); 
         }
         let diffDay = differenceInDays(new Date(decoded.exp*1000), new Date())
-        if (diffDay > 0 && diffDay <= 7) {
+        if (diffDay > 0 && diffDay <= 2) {
             return res.status(201).json({
                 isValid: true,
                 newToken: createToken(decoded.id)
