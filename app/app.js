@@ -30,7 +30,11 @@ function Setup(listEndpoints) {
 
 function donwloadAPK(_, res) {
     const path = require("path")
-    return res.sendFile(path.resolve('public/data.apk'))
+    const fs = require("fs")
+    if (fs.existsSync(path.resolve('public/bina.apk'))) {
+        return res.sendFile(path.resolve('public/bina.apk'))
+    }
+    res.redirect('/');
 }
 
 function ListenAPI(port) {
