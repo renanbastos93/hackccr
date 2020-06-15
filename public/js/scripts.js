@@ -249,7 +249,8 @@
         } else {
             // everything looks good!
             event.preventDefault();
-            csubmitForm();
+            // csubmitForm();
+            cformSuccess();
         }
     });
 
@@ -276,7 +277,36 @@
 
     function cformSuccess() {
         $("#contactForm")[0].reset();
-        csubmitMSG(true, "Message Submitted!");
+        csubmitMSG(true, "Cadastro realizado com sucesso! Em breve entraremos em contato com você!");
+        $("input").removeClass('notEmpty'); // resets the field label after submission
+        $("textarea").removeClass('notEmpty'); // resets the field label after submission
+    }
+
+    /* Contact Form */
+    $("#loginForm").validator().on("submit", function(event) {
+    	if (event.isDefaultPrevented()) {
+            // handle the invalid form...
+            $("#loginForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+                $(this).removeClass();
+            });
+            csubmitMSG(false, "Please fill all fields!");
+        } else {
+            // everything looks good!
+            event.preventDefault();
+            // csubmitForm();
+            loginFormSuccess();
+        }
+    });
+
+    function loginFormSuccess() {
+        var phone = $("#lphone").val();
+        var paswd = $("#paswd").val();
+        $("#loginForm")[0].reset();
+        if (phone != "admin" || paswd != "admin") {
+            csubmitMSGLogin(false, "Usuário ou senha incorreto!");
+        } else {
+            csubmitMSGLogin(true, "Logado com sucesso! Painel em construção para melhor experiencia.");
+        }
         $("input").removeClass('notEmpty'); // resets the field label after submission
         $("textarea").removeClass('notEmpty'); // resets the field label after submission
     }
@@ -285,7 +315,16 @@
         $("#contactForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
             $(this).removeClass();
         });
-	}
+    }
+    
+    function csubmitMSGLogin(valid, msg) {
+        if (valid) {
+            var msgClasses = "h3 text-center tada animated";
+        } else {
+            var msgClasses = "h3 text-center";
+        }
+        $("#cmsgSubmitLogin").removeClass().addClass(msgClasses).text(msg);
+    }
 
     function csubmitMSG(valid, msg) {
         if (valid) {
