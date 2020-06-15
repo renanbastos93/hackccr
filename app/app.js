@@ -28,8 +28,14 @@ function Setup(listEndpoints) {
     })
 }
 
+// function donwloadAPK(req, res) {
+
+
+// }
+
 function ListenAPI(port) {
     app.use("/", express.static('public'))
+    // app.get("/download", donwloadAPK)
     app.use("/api", middleware, 
         bodyParser.json(), 
         bodyParser.urlencoded({ extended: false }), 
